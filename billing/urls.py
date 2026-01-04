@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import MeView, SubscribeView, StripeWebhookView
+from .views import MeView, SubscribeView, StripeWebhookView, login_view
 
 urlpatterns = [
     path("me/", MeView.as_view(), name="me"),
     path("subscribe/", SubscribeView.as_view(), name="subscribe"),
     path("stripe/webhook/", StripeWebhookView.as_view(), name="stripe-webhook"),
+    path("login/", login_view, name="login"),
 ]
